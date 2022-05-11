@@ -1,4 +1,16 @@
 # 🍻 Relaxed RMRR Mapping for Linux 3.17+
+
+
+## Note - this fork uses a different patching method
+
+This fork has been amended to patch the required iommu source files using ``sed`` rather than ``patch``. This is achieved by using ``sed`` to amend the pve-kernel **Makefile** using several further ``sed`` commands to edit the iommu source file during the make process as this make process pulls the source filess (chicken/egg problem.)
+
+The key ``sed`` commands can be found at:
+
+-  [relax-intel-rmrr/patches/relaxable-rmrr-patch-sed.txt](patches/relaxable-rmrr-patch-sed.txt)
+-  [relax-intel-rmrr/build/proxmox/build.sh#L106](build/proxmox/build.sh#L106)
+
+
 ## 🐧💨 Now you can use PCI passthrough on broken platforms
 
 ### TL;DR
