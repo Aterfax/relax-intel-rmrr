@@ -1,3 +1,3 @@
-	sed -i '/^static int iommu_skip_te_disable;.*/a static int intel_relaxable_rmrr = 0;' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c >> test
-	sed -i 's/if (IS_USB_DEVICE(pdev) || IS_GFX_DEVICE(pdev))/if (intel_relaxable_rmrr || IS_USB_DEVICE(pdev) || IS_GFX_DEVICE(pdev))/g' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c >> test
-	sed -i '/intel_iommu_tboot_noforce = 1;/a \\	\	} else if (!strncmp(str, "relax_rmrr", 10)) {\n\	\	\	pr_info("Intel-IOMMU: assuming all RMRRs are relaxable. This can lead to instability or data loss\\n");\n\	\	\	intel_relaxable_rmrr = 1;' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c >> test
+	sed -i '/^static int iommu_skip_te_disable;.*/a static int intel_relaxable_rmrr = 0;' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c
+	sed -i 's/if (IS_USB_DEVICE(pdev) || IS_GFX_DEVICE(pdev))/if (intel_relaxable_rmrr || IS_USB_DEVICE(pdev) || IS_GFX_DEVICE(pdev))/g' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c
+	sed -i '/intel_iommu_tboot_noforce = 1;/a \\	\	} else if (!strncmp(str, "relax_rmrr", 10)) {\n\	\	\	pr_info("Intel-IOMMU: assuming all RMRRs are relaxable. This can lead to instability or data loss\\n");\n\	\	\	intel_relaxable_rmrr = 1;' ${KERNEL_SRC_SUBMODULE}/drivers/iommu/intel/iommu.c
