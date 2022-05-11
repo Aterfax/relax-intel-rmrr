@@ -104,7 +104,7 @@ echo "Step 3.0: Applying patches"
 #cp ../relax-intel-rmrr/patches/${RELAX_PATCH} ./patches/kernel/CUSTOM-add-relaxable-rmrr.patch
 #cp ../relax-intel-rmrr/patches/relaxable-rmrr-patch-sed.txt ./patches/kernel/
 sed -i '/^${KERNEL_SRC}.prepared: ${KERNEL_SRC_SUBMODULE} | submodule/r ../../../../patches/relaxable-rmrr-patch-sed.txt' Makefile
-#patch -p1 < ../relax-intel-rmrr/patches/${PROXMOX_PATCH}
+patch -p1 < ../relax-intel-rmrr/patches/${PROXMOX_PATCH}
 
 
 echo "Step 3.1: Compiling kernel... (it will take 30m-3h)"
