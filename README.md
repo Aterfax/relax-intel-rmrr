@@ -71,6 +71,28 @@ described here. Thus, I publish precompiled packages.
 5. [Configure the kernel](README.md#configuration)
 
 ---
+#### Docker - build packages from sources (intermediate)
+
+#### Prerequisites
+1. Proxmox 6/7 install (recommended) or Debian Buster/Bullseye <small>*(it WILL fail on Ubuntu!)*</small>
+2. Root access.
+3. ~40GB of free space.
+
+#### Steps
+1. Clone the repo and `cd` to the `build/proxmox/` directory. 
+2. Run the [`build_latest.sh`](build.sh) script from terminal:  
+   `RMRR_AUTOINSTALL=1 bash ./build_latest.sh`  
+   <small>*You can also manually execute commands in the script step-by-step. To facilitate that the script contains 
+   extensive comments for every step.*</small>
+
+3. *(OPTIONAL)* Verify the kernel works with the patch disabled by rebooting and checking if `uname -r` shows a version
+   ending with `-pve-relaxablermrr`
+4. [Configure the kernel](../../README.md#configuration)
+
+This process will also leave precompiled `*.deb` packages, in case you want to copy them to other Proxmox hosts you have.
+
+
+---
 
 #### Proxmox - building from sources (advanced)
 If you're running a version of Proxmox with [no packages available](README.md#proxmox---premade-packages-easy) you can
@@ -87,8 +109,6 @@ If you're running a version of Proxmox with [no packages available](README.md#pr
 3. Follow your distro kernel compilation & installation instruction:
     - [Debian](https://wiki.debian.org/BuildADebianKernelPackage)
     - [Ubuntu](https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel)
-
-***TODO:*** *Add automation script*
 
 ---
 
