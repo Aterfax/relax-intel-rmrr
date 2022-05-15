@@ -23,9 +23,9 @@ guide if you want to build packages in an isolated environment.
    <small>*You can also manually execute commands in the script step-by-step. To facilitate that the script contains 
    extensive comments for every step.*</small>
 
-4. *(OPTIONAL)* Verify the kernel works with the patch disabled by rebooting and checking if `uname -r` shows a version
+3. *(OPTIONAL)* Verify the kernel works with the patch disabled by rebooting and checking if `uname -r` shows a version
    ending with `-pve-relaxablermrr`
-5. [Configure the kernel](../../README.md#configuration)
+4. [Configure the kernel](../../README.md#configuration)
 
 This process will also leave precompiled `*.deb` packages, in case you want to copy them to other Proxmox hosts you have.
 
@@ -53,7 +53,11 @@ This is mostly intended for building packages for later use (and/or when you don
 
    `/mnt/scratch/proxmox-kernel-build-area/proxmox-kernel/debs`
    
+4. Now you can [install debs like you would premade packages](../../README.md#proxmox---premade-packages-easy).
+
+5. [Configure the kernel](README.md#configuration)
+   
 Note: If you want to build specific versions you can override the entrypoint from `bash -c "cd /build/proxmox/ && ./build_latest.sh"` to a script version of your choosing e.g. `bash -c "cd /build/proxmox/ && ./build7.1-10.sh"`
 
 
-Now you can [install debs like you would premade packages](../../README.md#proxmox---premade-packages-easy).
+
