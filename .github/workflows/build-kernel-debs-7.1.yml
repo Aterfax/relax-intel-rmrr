@@ -24,3 +24,9 @@ jobs:
       with:
         name: RMRR-Relaxation-Patched-PVE-kernel-debs-zip
         path: release.zip
+        
+    - name: Clean up release zip
+      run: rm release.zip
+      
+    - name: Clean up debs if present
+      run: if [[ -d "debs" ]]; then rm -rf debs; fi
