@@ -29,4 +29,4 @@ jobs:
       run: rm -r release.zip
       
     - name: Clean up debs if present
-      run: if [ -d "./debs" ]; then rm -rf ./debs; fi
+      run: if [[ -d "debs" ]]; then rm -rf debs; fi
