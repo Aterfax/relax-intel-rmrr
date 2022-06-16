@@ -123,6 +123,9 @@ fi
 # Go to the actual Proxmox toolchain
 cd pve-kernel
 
+echo "Showing Git status:"
+git status
+
 # (OPTIONAL) Download flat copy of Ubuntu hirsute kernel submodule
 #  If you skip this the "make" of Proxmox kernel toolchain will download a copy (a Proxmox kernel is based on Ubuntu
 #  If you skip this the "make" of Proxmox kernel toolchain will download a copy (a Proxmox kernel is based on Ubuntu
