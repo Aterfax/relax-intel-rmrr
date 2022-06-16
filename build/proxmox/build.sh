@@ -113,7 +113,7 @@ cd proxmox-kernel
 echo "Step 2.1: Downloading Proxmox kernel toolchain & patches"
 
 if [[ $PVE_KERNEL_GIT_DIR_PRESENT -ne 1 ]]; then
-  git clone ${PVE_KERNEL_BRANCH} git://git.proxmox.com/git/pve-kernel.git
+  git clone git://git.proxmox.com/git/pve-kernel.git
 fi
 
 if [[ $RELAX_INTEL_RMRR_GIT_DIR_PRESENT -ne 1 ]]; then
@@ -122,6 +122,9 @@ fi
 
 # Go to the actual Proxmox toolchain
 cd pve-kernel
+
+#Checkout the correct branch 
+git checkout ${PVE_KERNEL_BRANCH}
 
 echo "Showing Git status:"
 git status
