@@ -46,10 +46,15 @@ fi
 touch $SCRIPT_DIR/script_running
 
 if [[ -d "proxmox-kernel" ]]; then
-  echo 'Directory "proxmox-kernel" already exists - resetting cloned Git repositories.'
-  cd proxmox-kernel
 
+  echo 'Directory "proxmox-kernel" already exists.'
+  cd proxmox-kernel
+  
+  echo "Cleaning debs previous dir if present."
+  if [[ -d "debs" ]]; then rm -rf debs; fi
+  
   if [[ -d "pve-kernel" ]]; then
+    echo 'Directory "pve-kernel" already exists - resetting cloned Git repositories.'
     cd pve-kernel
     git clean -xfd
     git submodule foreach --recursive git clean -xfd
