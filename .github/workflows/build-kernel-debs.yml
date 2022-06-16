@@ -26,7 +26,7 @@ jobs:
         path: release.zip
         
     - name: Clean up release zip
-      run: rm -r release.zip
+      run: rm release.zip
       
     - name: Clean up debs if present
       run: if [[ -d "debs" ]]; then rm -rf debs; fi
