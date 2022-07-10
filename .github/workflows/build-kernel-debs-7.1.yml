@@ -12,7 +12,11 @@ jobs:
       image: aterfax/relaxable-rmrr-proxmox-kernel-builder:latest
       options: -v ${{ github.workspace }}:/build/proxmox/proxmox-kernel #Note this is technically a very bad idea if your Runner is doing more than this sole action due to environment pollution.
         
-    steps:         
+    steps:    
+    
+    - name: Pre-clean up debs if present
+      run: bash -c 'if [[ -d "/build/proxmox/proxmox-kernel/debs" ]]; then rm -rf /build/proxmox/proxmox-kernel/debs; fi'
+      
     - name: Build kernel
       run: cd /build/proxmox/ && ./build7.1-10.sh
     
