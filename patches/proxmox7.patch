@@ -1,11 +1,11 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -11,7 +11,7 @@
+@@ -13,7 +13,7 @@ PKGREL=1
  KERNEL_MAJMIN=$(KERNEL_MAJ).$(KERNEL_MIN)
  KERNEL_VER=$(KERNEL_MAJMIN).$(KERNEL_PATCHLEVEL)
-
--EXTRAVERSION=-${KREL}-pve
-+EXTRAVERSION=-${KREL}-pve-relaxablermrr
- KVNAME=${KERNEL_VER}${EXTRAVERSION}
- PACKAGE=pve-kernel-${KVNAME}
- HDRPACKAGE=pve-headers-${KVNAME}
+ 
+-EXTRAVERSION=-$(KREL)-pve
++EXTRAVERSION=-$(KREL)-pve-relaxablermrr
+ KVNAME=$(KERNEL_VER)$(EXTRAVERSION)
+ PACKAGE=pve-kernel-$(KVNAME)
+ HDRPACKAGE=pve-headers-$(KVNAME)
