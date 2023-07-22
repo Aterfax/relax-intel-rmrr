@@ -140,9 +140,10 @@ In most distros (including Proxmox) you do this by:
         GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on,relax_rmrr iommu=pt intremap=no_x2apic_optout"
         ```
     - *Side note: these are actually options which will make your PCI passthrough work and do so efficiently*
-3a. Running `proxmox-boot-tool kernel list` to list your available kernels and then 'pinning' your chosen version with `proxmox-boot-tool` e.g. `proxmox-boot-tool kernel pin 6.2.11-1-pve-relaxablermrr` (Make sure to keep updating your kernels and repinning new releases!)
-3b. If not running Proxmox, run the `update-grub` command and consult your Linux distro's instructions on kernel pinning to pin your chosen kernel.
-4. Rebooting
+3. If not running Proxmox, running the `update-grub` command and consulting your Linux distro's instructions on kernel pinning to pin your chosen kernel.
+4. If using Proxmox, running the `proxmox-boot-tool kernel list` command to list your available kernels and then 'pinning' your chosen version with the `proxmox-boot-tool` e.g. `proxmox-boot-tool kernel pin 6.2.11-1-pve-relaxablermrr`
+5. Making sure to take a note or making a calendar event to keep updating your kernels and repinning new releases!
+6. Rebooting
 
 To verify if the the patch is active execute `dmesg | grep 'Intel-IOMMU'` after reboot. You should see a result similar
  to this:
