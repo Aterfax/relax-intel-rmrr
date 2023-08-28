@@ -24,7 +24,7 @@ RUN apt -y install git nano screen patch fakeroot build-essential devscripts lib
 
 #Need pahole 1.16 or above
 RUN TEMP_DEB="$(mktemp)" && \
- wget -O "$TEMP_DEB" http://archive.ubuntu.com/ubuntu/pool/universe/d/dwarves-dfsg/dwarves_1.21-0ubuntu1~20.04_amd64.deb && \
+ wget -O "$TEMP_DEB" http://archive.ubuntu.com/ubuntu/pool/universe/d/dwarves-dfsg/dwarves_1.21-0ubuntu1~20.04.1_amd64.deb && \
  dpkg -i "$TEMP_DEB" && \
  rm -f "$TEMP_DEB" 
 
