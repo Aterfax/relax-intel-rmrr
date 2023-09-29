@@ -1,9 +1,9 @@
-# 🍻 Relaxed RMRR Mapping for Linux 3.17+
+# 🍻 Relaxed RMRR Mapping for Linux 3.17+ - ARCHIVED
 [![Build and Publish Docker Image](https://github.com/Aterfax/relax-intel-rmrr/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Aterfax/relax-intel-rmrr/actions/workflows/docker-publish.yml)
 [![Build kernel debs](https://github.com/Aterfax/relax-intel-rmrr/actions/workflows/build-kernel-debs.yml/badge.svg)](https://github.com/Aterfax/relax-intel-rmrr/actions/workflows/build-kernel-debs.yml)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/aterfax/relaxable-rmrr-proxmox-kernel-builder/latest)
 ![Docker Pulls](https://img.shields.io/docker/pulls/aterfax/relaxable-rmrr-proxmox-kernel-builder)
-## Note - this fork uses a different patching method / Docker based builds now functional.
+> :warning: Note - this repo is now archived as support for the Relaxed RMRR Mapping is now natively supported by the normal Proxmox kernel as of kernel release 6.2.16-13-pve See: https://bugzilla.proxmox.com/show_bug.cgi?id=4707 https://forum.proxmox.com/threads/updating-upgrading-custom-patched-kernel.129384/#post-591947
 
 This fork has been amended to patch the required iommu source files using ``sed`` rather than ``patch``. This is achieved by using ``sed`` to amend the pve-kernel **Makefile** using several further ``sed`` commands to edit the iommu source file during the make process as this make process pulls the source files (chicken/egg problem.)
 
